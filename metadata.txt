@@ -29,7 +29,7 @@ tags=vector,export,crs
 
 homepage=http://www.viamap.hu
 tracker=
-repository=
+repository=https://github.com/zsiki/bulkvectorexport
 icon=icon.png
 # experimental flag
 experimental=True
