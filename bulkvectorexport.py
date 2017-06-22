@@ -82,7 +82,11 @@ class BulkVectorExport:
         # See if OK was pressed
         if result == 1:
             # get target directory
-            dirName = self.dlg.ui.dirEdit.text()
+            dirName = self.dlg.ui.dirEdit.text().strip()
+            if len(dirName) == 0:
+                QtGui.QMessageBox.critical(self.dlg, "BulkVectorExport", \
+                    "No directory entered")
+                return
             if dirName[len(dirName)-1] != "/":
                 dirName = dirName + "/"
             if not QtCore.QFileInfo(dirName).isDir():
