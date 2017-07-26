@@ -107,8 +107,13 @@ class BulkVectorExport:
                         crs = layer.crs()
                     else:
                         crs = qgis.utils.iface.mapCanvas().mapRenderer().destinationCrs()
+                    exportOnlySelected=False
+                    # Thijs Brentjens (https://github.com/thijsbrentjens/) add option for exporting only selected features
+                    if self.dlg.ui.onlySelectedButton.isChecked():
+                        exportOnlySelected=True
                     print "CRS selected: " + crs.description()
-                    result2 = qgis.core.QgsVectorFileWriter.writeAsVectorFormat(layer, layer_filename, layer.dataProvider().encoding(), crs, ogr_driver_name)
+                    # Thijs Brentjens (https://github.com/thijsbrentjens/) add option for exporting only selected features
+                    result2 = qgis.core.QgsVectorFileWriter.writeAsVectorFormat(layer, layer_filename, layer.dataProvider().encoding(), crs, ogr_driver_name, onlySelected=exportOnlySelected)
                     print "Status: " + str(result2)
                     if result2 != 0:
                         QtGui.QMessageBox.warning(self.dlg, "BulkVectorExport",\
