@@ -97,6 +97,14 @@ class BulkVectorExport:
             ogr_driver_name = self.dlg.ui.formatBox.currentText()
             print"Driver ogr name: " + ogr_driver_name
             layers = qgis.utils.iface.mapCanvas().layers()
+            exportOnlySelected = False
+            # Thijs Brentjens (https://github.com/thijsbrentjens/) add option for exporting only selected features
+            if self.dlg.ui.onlySelectedButton.isChecked():
+                exportOnlySelected = True
+            exportSld = False
+            if self.dlg.ui.exportSldButton.isChecked():
+                exportSld = True
+            crs = qgis.utils.iface.mapCanvas().mapRenderer().destinationCrs()
             for layer in layers:
                 layerType = layer.type()
                 if layerType == QgsMapLayer.VectorLayer:
@@ -105,12 +113,6 @@ class BulkVectorExport:
                     print 'Filename: ' + layer_filename
                     if self.dlg.ui.layerCrsButton.isChecked():
                         crs = layer.crs()
-                    else:
-                        crs = qgis.utils.iface.mapCanvas().mapRenderer().destinationCrs()
-                    exportOnlySelected=False
-                    # Thijs Brentjens (https://github.com/thijsbrentjens/) add option for exporting only selected features
-                    if self.dlg.ui.onlySelectedButton.isChecked():
-                        exportOnlySelected=True
                     print "CRS selected: " + crs.description()
                     # Thijs Brentjens (https://github.com/thijsbrentjens/) add option for exporting only selected features
                     result2 = qgis.core.QgsVectorFileWriter.writeAsVectorFormat(layer, layer_filename, layer.dataProvider().encoding(), crs, ogr_driver_name, onlySelected=exportOnlySelected)
@@ -119,3 +121,6 @@ class BulkVectorExport:
                         QtGui.QMessageBox.warning(self.dlg, "BulkVectorExport",\
                             "Failed to export: " + layer.name() + \
                             " Status: " + str(result2))
+                    if exportSld:
+                        layer.saveSldStyle(layer_filename + '.sld')
+                        print 'SLD: ' + layer_filename
