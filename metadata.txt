@@ -12,6 +12,7 @@
 name=Bulk vector export
 qgisMinimumVersion=2.0
 description=Export map contents to specified format and CRS
+about=Export all loaded vector layers into a directory using a specified CRS, all or selected features and an optional SLD file
 version=0.3
 author=ViaMap Ltd.
 author=Zoltan Siki
@@ -22,13 +23,13 @@ email=siki.zoltan@epito.bme.hu
 # Optional items:
 
 # Uncomment the following line and add your changelog entries:
-# changelog=
+changelog=option for export selected features only and option for SLD style export
 
 # tags are comma separated with spaces allowed
 tags=vector,export,crs
 
 homepage=https://github.com/zsiki/bulkvectorexport
-tracker=
+tracker=https://github.com/zsiki/bulkvectorexport
 repository=https://github.com/zsiki/bulkvectorexport
 icon=icon.png
 # experimental flag
