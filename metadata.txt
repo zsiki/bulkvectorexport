@@ -12,10 +12,10 @@
 name=Bulk vector export
 qgisMinimumVersion=2.0
 description=Export map contents to specified format and CRS
-version=0.2
+version=0.3
 author=ViaMap Ltd.
 author=Zoltan Siki
-email=info@viamap.hu
+email=siki.zoltan@epito.bme.hu
 
 # end of mandatory metadata
 
@@ -27,12 +27,12 @@ email=info@viamap.hu
 # tags are comma separated with spaces allowed
 tags=vector,export,crs
 
-homepage=http://www.viamap.hu
+homepage=https://github.com/zsiki/bulkvectorexport
 tracker=
 repository=https://github.com/zsiki/bulkvectorexport
 icon=icon.png
 # experimental flag
-experimental=True
+experimental=False
 
 # deprecated flag (applies to the whole plugin, not just a single version
 deprecated=False
