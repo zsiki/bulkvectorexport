@@ -17,10 +17,10 @@ except AttributeError:
 class Ui_BulkVectorExportDialog(object):
     def setupUi(self, BulkVectorExportDialog):
         BulkVectorExportDialog.setObjectName(_fromUtf8("BulkVectorExportDialog"))
-        BulkVectorExportDialog.resize(392, 141)
-        BulkVectorExportDialog.setWindowTitle(QtGui.QApplication.translate("BulkVectorExportDialog", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
+        BulkVectorExportDialog.resize(392, 181)
+        BulkVectorExportDialog.setWindowTitle(QtGui.QApplication.translate("BulkVectorExportDialog", "Vector data bulk export", None, QtGui.QApplication.UnicodeUTF8))
         self.buttonBox = QtGui.QDialogButtonBox(BulkVectorExportDialog)
-        self.buttonBox.setGeometry(QtCore.QRect(220, 100, 161, 32))
+        self.buttonBox.setGeometry(QtCore.QRect(220, 140, 161, 32))
         self.buttonBox.setWhatsThis(_fromUtf8(""))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
         self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
@@ -53,6 +53,11 @@ class Ui_BulkVectorExportDialog(object):
         self.dirButton.setGeometry(QtCore.QRect(360, 40, 31, 21))
         self.dirButton.setText(QtGui.QApplication.translate("BulkVectorExportDialog", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.dirButton.setObjectName(_fromUtf8("dirButton"))
+        self.onlySelectedButton = QtGui.QCheckBox(BulkVectorExportDialog)
+        self.onlySelectedButton.setGeometry(QtCore.QRect(140, 100, 241, 17))
+        self.onlySelectedButton.setText(QtGui.QApplication.translate("BulkVectorExportDialog", "Only selected features", None, QtGui.QApplication.UnicodeUTF8))
+        self.onlySelectedButton.setChecked(False)
+        self.onlySelectedButton.setObjectName(_fromUtf8("onlySelectedButton"))
 
         self.retranslateUi(BulkVectorExportDialog)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), BulkVectorExportDialog.accept)

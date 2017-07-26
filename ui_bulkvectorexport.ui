@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>392</width>
-    <height>141</height>
+    <height>181</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -102,7 +102,7 @@
     <rect>
      <x>260</x>
      <y>70</y>
-     <width>121</width>
+     <width>181</width>
      <height>17</height>
     </rect>
    </property>
@@ -110,6 +110,19 @@
     <string>Project CRS</string>
    </property>
   </widget>
+   <widget class="QCheckBox" name="onlySelected">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>100</y>
+     <width>241</width>
+     <height>17</height>
+    </rect>
+   </property>
+    <property name="text">
+     <string>Only selected features</string>
+    </property>
+   </widget>
   <widget class="QPushButton" name="dirButton">
    <property name="geometry">
     <rect>
