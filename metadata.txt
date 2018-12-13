@@ -1,40 +1,39 @@
-# This file contains metadata for your plugin. Beginning
-# with version 1.8 this is the preferred way to supply information about a
-# plugin. The current method of embedding metadata in __init__.py will
-# be supported until version 2.0
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
 
-# This file should be included when you package your plugin.
-
-# Mandatory items:
-
+# This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=Bulk vector export
-qgisMinimumVersion=2.0
-description=Export map contents to specified format and CRS
-about=Export all loaded vector layers into a directory using a specified CRS, all or selected features and an optional SLD file
-version=0.3
-author=ViaMap Ltd.
+name=bulkvectorexport
+qgisMinimumVersion=3.0
+description=export vector layers to common format and crs
+version=0.2
 author=Zoltan Siki
-email=siki.zoltan@epito.bme.hu
+email=siki1958@gmail.com
 
-# end of mandatory metadata
+about=Export opened vector layers from the project to a common folder, format and CRS.
 
-# Optional items:
+tracker=https://github.com/zsiki/bulkvectorexport/issues
+repository=https://github.com/zsiki/bulkvectorexport
+# End of mandatory metadata
 
-# Uncomment the following line and add your changelog entries:
-changelog=option for export selected features only and option for SLD style export
+# Recommended items:
 
-# tags are comma separated with spaces allowed
-tags=vector,export,crs
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=export vector crs
 
 homepage=https://github.com/zsiki/bulkvectorexport
-tracker=https://github.com/zsiki/bulkvectorexport
-repository=https://github.com/zsiki/bulkvectorexport
+category=Vector
 icon=icon.png
 # experimental flag
 experimental=False
 
-# deprecated flag (applies to the whole plugin, not just a single version
+# deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
 
