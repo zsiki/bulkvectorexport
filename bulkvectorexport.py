@@ -22,11 +22,11 @@
  ***************************************************************************/
 """
 import os.path
-from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
-from PyQt5.QtGui import QIcon, QMessageBox
-from PyQt5.QtWidgets import QAction
-from qgis.core import QgsVectorFileWriter, QgsProject, QgsMapLayer, \
-    QgsLayerDefinition
+from PyQt5.QtCore import (QSettings, QTranslator, qVersion, QCoreApplication)
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import (QAction, QMessageBox)
+from qgis.core import (QgsVectorFileWriter, QgsProject, QgsMapLayer,
+    QgsLayerDefinition)
 
 # Initialize Qt resources from file resources.py
 from .resources import *

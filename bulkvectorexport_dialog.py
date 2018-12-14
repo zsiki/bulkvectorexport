@@ -24,9 +24,7 @@
 
 import os
 
-from PyQt5 import uic
-from PyQt5 import QtWidgets
-from PyQt5 import QtCore, QtGui
+from PyQt5 import (uic, QtWidgets, QtCore)
 from osgeo import ogr
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
@@ -61,7 +59,7 @@ class BulkVectorExportDialog(QtWidgets.QDialog, FORM_CLASS):
 
     def getDir(self):
         """ select target directory """
-        dirName = QtGui.QFileDialog.getExistingDirectory(self, \
+        dirName = QtWidgets.QFileDialog.getExistingDirectory(self, \
             "Select Directory")
         # TODO cancel
         self.dirEdit.setText(dirName)
@@ -71,11 +69,11 @@ class BulkVectorExportDialog(QtWidgets.QDialog, FORM_CLASS):
         # get target directory
         dirName = self.dirEdit.text().strip()
         if len(dirName) == 0:
-            QtGui.QMessageBox.critical(self, "BulkVectorExport", \
+            QtWidgets.QMessageBox.critical(self, "BulkVectorExport", \
                 "No directory entered")
             return
         if not QtCore.QFileInfo(dirName).isDir():
-            QtGui.QMessageBox.critical(self, "BulkVectorExport", \
+            QtWidgets.QMessageBox.critical(self, "BulkVectorExport", \
                 "No such directory : " + dirName)
             return
         self.accept()

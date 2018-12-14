@@ -10,7 +10,7 @@
 name=bulkvectorexport
 qgisMinimumVersion=3.0
 description=export vector layers to common format and crs
-version=0.2
+version=1.0
 author=Zoltan Siki
 email=siki1958@gmail.com
 
