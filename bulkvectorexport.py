@@ -191,6 +191,7 @@ class BulkVectorExport:
             print('Selected: ', exportOnlySelected)
             sldExport = self.dlg.sldExport.isChecked()
             qlrExport = self.dlg.qlrExport.isChecked()
+            qmlExport = self.dlg.qmlExport.isChecked()
             crs = QgsProject.instance().crs()
             for layer in self.iface.mapCanvas().layers():
                 if layer.type() == QgsMapLayer.VectorLayer:
@@ -212,10 +213,11 @@ class BulkVectorExport:
                         if sldExport:
                             # export SLD if layer was exported with success
                             layer.saveSldStyle(layer_filename + '.sld')
-                            print('SLD: ' + layer_filename)
                         if qlrExport:
                             # export QGIS layer definition (qlr)
                             node = QgsProject.instance().layerTreeRoot().findLayer(layer.id())
                             QgsLayerDefinition.exportLayerDefinition(
                                 layer_filename, [node])
-                            print('QLR: ' + layer_filename)
+                        if qmlExport:
+                            qml = os.path.splitext(layer_filename)[0] + '.qml'
+                            layer.saveNamedStyle(qml)

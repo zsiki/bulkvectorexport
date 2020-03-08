@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>417</width>
-    <height>245</height>
+    <height>268</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -131,7 +131,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>210</y>
+     <y>240</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -150,7 +150,7 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>210</y>
+     <y>240</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -170,6 +170,19 @@
    </property>
    <property name="text">
     <string>Export QGIS layer style (qlr)</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="qmlExport">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>210</y>
+     <width>251</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Export QGIS layer style (qml)</string>
    </property>
   </widget>
  </widget>
