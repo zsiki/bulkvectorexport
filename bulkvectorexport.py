@@ -22,9 +22,9 @@
  ***************************************************************************/
 """
 import os.path
-from PyQt5.QtCore import (QSettings, QTranslator, qVersion, QCoreApplication)
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import (QAction, QMessageBox)
+from qgis.PyQt.QtCore import (QSettings, QTranslator, qVersion, QCoreApplication)
+from qgis.PyQt.QtGui import QIcon
+from qgis.PyQt.QtWidgets import (QAction, QMessageBox)
 from qgis.core import (QgsVectorFileWriter, QgsProject, QgsMapLayer,
     QgsLayerDefinition)
 
@@ -180,7 +180,7 @@ class BulkVectorExport:
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        result = self.dlg.exec()
         # See if OK was pressed
         if result:
             # get directry name

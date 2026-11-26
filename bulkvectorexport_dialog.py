@@ -24,7 +24,7 @@
 
 import os
 
-from PyQt5 import (uic, QtWidgets, QtCore)
+from qgis.PyQt import (uic, QtWidgets, QtCore)
 from osgeo import ogr
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
