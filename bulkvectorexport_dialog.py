@@ -51,7 +51,7 @@ class BulkVectorExportDialog(QtWidgets.QDialog, FORM_CLASS):
             driverNameList = []
             for i in range(ogr.GetDriverCount()):
                 name = ogr.GetDriver(i).GetName()
-                if not name in driverNameList and \
+                if name not in driverNameList and \
                     name in self.supportedDriverList and \
                     ogr.GetDriver(i).TestCapability(ogr.ODrCCreateDataSource):
                     driverNameList.append(name)
