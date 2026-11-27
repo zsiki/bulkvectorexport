@@ -194,7 +194,7 @@ class BulkVectorExport:
             qmlExport = self.dlg.qmlExport.isChecked()
             crs = QgsProject.instance().crs()
             for layer in self.iface.mapCanvas().layers():
-                if layer.type() == QgsMapLayer.VectorLayer:
+                if layer.type() == QgsMapLayer.LayerType.VectorLayer:
                     print('Writing:' + layer.name())
                     layer_filename = os.path.join(dirName, layer.name())
                     if self.dlg.layerCrsButton.isChecked():
